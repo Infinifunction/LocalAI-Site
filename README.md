@@ -1,96 +1,57 @@
-# Akıllı Lokal Asistanınız
+# Infini AI - Your Smart Local Assistant
 
-Bu Web Sitesi kullanıcı deneyimini ön planda tutan, modern ve premium arayüzüyle öne çıkan bir lokal yapay zeka asistanı uygulamasıdır.
+This website is a local AI assistant application that stands out with its modern and premium interface, prioritizing user experience.
 
-✨ Öne Çıkan Özellikler
-🎨 Premium Arayüz: Smooth CSS animasyonları ve geçişlerle zenginleştirilmiş modern tasarım
+## ✨ Highlighted Features
 
-📝 Zengin Markdown Desteği: Kod blokları, tablolar ve formatlı metin desteği
+*   **🎨 Premium Interface:** Modern design enriched with smooth CSS animations and transitions.
+*   **📝 Rich Markdown Support:** Full support for code blocks, tables, and formatted text in conversations.
+*   **💾 Local Operation:** Your data stays on your device; privacy is a priority.
+*   **🚀 Fast Response:** Instant responses with optimized performance.
 
-💾 Lokal Çalışma: Verileriniz sizin cihazınızda kalır, gizlilik ön planda
+## 🛠️ Tech Stack
 
-🚀 Hızlı Yanıt: Optimize edilmiş performans ile anlık yanıtlar
+*   **Frontend:** HTML5, CSS3, JavaScript
+*   **Backend:** Python (Flask)
+*   **Styling:** Modern CSS Framework
+*   **AI Integration:** OpenAI library & API
 
-🛠️ Teknoloji Yığını
-Frontend: HTML5, CSS3, JavaScript, Python
+## 📦 Installation & Setup
 
-Styling: Modern CSS Framework
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/Infinifunction/LocalAI-Site
+    cd AI
+    ```
 
-AI Backend: OpenAI kütüphanesi ile API lerinizi kolayca entegre edebilirsiniz
+2.  **Run the backend server:**
+    ```bash
+    python backend/app.py
+    ```
 
-📦 Kurulum
-bash'
-# Projeyi klonlayın
-git clone https://github.com/yourusername/infini-ai.git
+3.  **Open your browser and navigate to the provided local address (e.g., `http://localhost:2525`).**
 
-# Proje dizinine gidin
-cd infini-ai
+## 🎯 Usage
 
-# Gerekli bağımlılıkları yükleyin
-npm install
+1.  **Create Account:** Register with a username, email, and password.
+2.  **Log In:** Log in with your email and password.
+3.  **Start Chatting:** Begin a conversation with your powerful AI assistant.
+4.  **Use Markdown:** Enhance your messages with rich formatting, code snippets, and more.
 
-# Development sunucusunu başlatın
-npm run dev
+## 🤝 Contributing
 
-# Production build alın
-npm run build'
+Pull requests are welcome. For major changes, please open an issue first to discuss what you want to change.
 
-🎯 Kullanım
-Hesap Oluştur: Email ve şifre ile kayıt olun
+## 📝 License
 
-Giriş Yapın: Güvenli kimlik doğrulama ile sisteme giriş yapın
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
-Sohbet Başlatın: AI asistanınızla sohbet etmeye başlayın
+## 👨‍💻 Developer
 
-Markdown Kullanın: Zengin formatlama seçeneklerinden yararlanın
+**Metahan Uzun** - [Infinifunction](https://github.com/Infinifunction)
 
-🖼️ Ekran Görüntüleri
-https://via.placeholder.com/400x250?text=Modern+Login+Ekran%C4%B1
-https://via.placeholder.com/400x250?text=Premium+Sohbet+Aray%C3%BCz%C3%BC
-https://via.placeholder.com/400x250?text=Kullan%C4%B1c%C4%B1+Profil+Ekran%C4%B1
+---
 
-🔧 Yapılandırma
-Proje ayarlarını config.js dosyasından özelleştirebilirsiniz:
+**Note:** This project is under active development. Feel free to open an issue for suggestions and feedback.
 
-javascript
-const config = {
-    aiModel: 'local-model',
-    theme: 'dark',
-    language: 'tr',
-    maxTokens: 2048
-};
-🤝 Katkıda Bulunma
-Katkıda bulunmak için lütfen:
-
-Fork işlemi yapın
-
-Feature branch oluşturun (git checkout -b feature/amazing-feature)
-
-Değişikliklerinizi commit edin (git commit -m 'Add amazing feature')
-
-Branch'inizi push edin (git push origin feature/amazing-feature)
-
-Pull Request oluşturun
-
-📝 Lisans
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için LICENSE dosyasına bakın.
-
-👨‍💻 Geliştirici
-Meschan Uzan - Infinifunction
-
-🌐 İletişim
-Website: infinifunction.com
-
-GitHub: @yourusername
-
-Email: info@infinifunction.com
-
-🙏 Teşekkürler
-Projeye katkıda bulunan tüm geliştiricilere teşekkürler!
-
-Not: Bu proje aktif olarak geliştirilmektedir. Öneri ve geri bildirimleriniz için issue açabilirsiniz.
-
-https://img.shields.io/github/stars/yourusername/infini-ai?style=social
-https://img.shields.io/github/forks/yourusername/infini-ai?style=social
-https://img.shields.io/github/issues/yourusername/infini-ai
-https://img.shields.io/github/license/yourusername/infini-ai
+**Note2:** Sorry for the missing and insufficient comment lines 😢
