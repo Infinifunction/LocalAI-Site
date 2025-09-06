@@ -55,3 +55,6 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 **Note:** This project is under active development. Feel free to open an issue for suggestions and feedback.
 
 **Note2:** Sorry for the missing and insufficient comment lines 😢
+
+**⚠️Warning⚠️:** There may be many security vulnerabilities in this situation, please take security precautions before publishing the site and keep the Database in a safe environment
+
