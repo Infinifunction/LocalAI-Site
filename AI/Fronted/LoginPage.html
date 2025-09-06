@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en_US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/RegisteLoginPage.css')}}">
+</head>
+<body>
+    <!-- Toast Container -->
+    <div id="toast" class="toast hidden">
+        <span id="toast-message"></span>
+    </div>
+    <div class="login-wrapper">
+        <form action="/login" method="POST">
+            <div class="animated-border">
+                <h2>Login</h2>
+                <div class="input-field">
+                    <input type="email" name="email" required>
+                    <label>Enter Your Email Address</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" name="password" required>
+                    <label>Enter your password</label>
+                </div>
+                <div class="password-options">
+                    <label for="remember">
+                        <input type="checkbox" id="remember" name="remember">
+                        <p>Remember me</p>
+                    </label>
+                    <a href="/changepassword">I Forgot My Password</a>
+                </div>
+                <div class="terms-wrapper">
+                    <label>
+                        <input type="checkbox" name="terms_accepted" required>
+                        <span>
+                        By clicking the Sign Up button, you declare that you have read and accepted the 
+                        <a href="/terms" target="_blank">Terms of Use</a> and
+                        <a href="/privacy" target="_blank">Privacy Policy.</a>
+                        </span>
+                    </label>
+                </div>
+                <button type="submit">Login</button>
+                <div class="account-options">
+                    <p>Don't have an account? <a href="/register">Sign up</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script id="flash-data" type="application/json">
+        {{ get_flashed_messages(with_categories=true) | tojson | safe }}
+    </script>
+    <script>
+        function showToast(message, type = "error") {
+            const toast = document.getElementById("toast");
+            const msgSpan = document.getElementById("toast-message");
+
+            toast.className = `toast show ${type}`;
+            msgSpan.textContent = message;
+
+            setTimeout(() => {
+                toast.className = "toast hidden";
+            }, 4000);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const flashDataElement = document.getElementById('flash-data');
+            let flashData = [];
+
+            if (flashDataElement) {
+                try {
+                flashData = JSON.parse(flashDataElement.textContent);
+                } catch (e) {
+                console.error("Failed to parse flash data:", e);
+                }
+            }
+
+            if (flashData && flashData.length > 0) {
+                flashData.forEach(([category, message]) => {
+                showToast(message, category);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

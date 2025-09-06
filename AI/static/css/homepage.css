@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(at 20% 20%, #353638, transparent 100%),
+              radial-gradient(at 80% 30%, #232324, transparent 100%),
+              radial-gradient(at 50% 80%, #6a6f75, transparent 100%);
+  background-color: #43454a;
+}
+
+/* ===================== */
+/* Responsive Codes */
+/* ===================== */
+
+/* Tablet için (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    padding: 10px;
+  }
+  
+  .sidebar-menu-button {
+    display: none;
+  }
+}
+
+/* For mobile (768px and below) - Your existing code has been updated */
+@media (max-width: 768px) {
+  body {
+    height: 100vh;
+    overflow-x: hidden;
+    padding: 0;
+  }
+  
+  .sidebar-menu-button {
+    position: fixed;
+    left: 15px;
+    top: 15px;
+    height: 45px;
+    width: 45px;
+    display: flex;
+    color: #F1F4FF;
+    background: #151A2D;
+    border: none;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  
+  .sidebar.collapsed {
+    width: 280px;
+    left: -280px;
+    transition: left 0.3s ease;
+  }
+  
+  .sidebar.collapsed .sidebar-header .sidebar-toggler {
+    transform: none;
+  }
+  
+  .sidebar.collapsed .sidebar-nav .primary-nav {
+    transform: translateY(15px);
+  }
+}
+
+/* Small mobile devices (480px and below) */
+@media (max-width: 480px) {
+  .sidebar-menu-button {
+    left: 10px;
+    top: 10px;
+    height: 42px;
+    width: 42px;
+  }
+  
+  .sidebar.collapsed {
+    width: 260px;
+    left: -260px;
+  }
+}
+
+/* Very small screens (320px and below) */
+@media (max-width: 320px) {
+  .sidebar-menu-button {
+    height: 40px;
+    width: 40px;
+  }
+  
+  .sidebar.collapsed {
+    width: 240px;
+    left: -240px;
+  }
+}
+
+/* For landscape orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+  .sidebar-menu-button {
+    top: 10px;
+    left: 10px;
+    height: 40px;
+    width: 40px;
+  }
+}
+
+/* For large screens (1440px+) */
+@media (min-width: 1440px) {
+  body {
+    padding: 0;
+  }
+}
+
+/* Ultra-wide screens (1920px+) */
+@media (min-width: 1920px) {
+  body {
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,584 @@
+/* ================================ */
+/* AI MARKDOWN CSS FRAMEWORK v1.0   */
+/* ================================ */
+/* Designed specifically for Infini AI */
+
+/* Root Variables - Dark Theme Optimized */
+:root {
+    /* Primary Colors */
+    --md-primary: #2d63ff;
+    --md-primary-light: rgba(45, 99, 255, 0.15);
+    --md-primary-dark: #1a4acc;
+    
+    /* Background Hierarchy */
+    --md-bg-primary: #121212;
+    --md-bg-secondary: #1a1a1a;
+    --md-bg-tertiary: #1e1e1e;
+    --md-bg-elevated: #2c2c2e;
+    --md-bg-overlay: rgba(30, 30, 30, 0.95);
+    
+    /* Text Colors */
+    --md-text-primary: #ffffff;
+    --md-text-secondary: #b8b8b8;
+    --md-text-muted: #999999;
+    --md-text-disabled: #666666;
+    
+    /* Accent Colors */
+    --md-accent-info: #00b4d8;
+    --md-accent-success: #52b788;
+    --md-accent-warning: #f77f00;
+    --md-accent-danger: #d62828;
+    --md-accent-purple: #7209b7;
+    
+    /* Surface Colors */
+    --md-surface: #1a202c;
+    --md-surface-hover: #2d3748;
+    --md-surface-active: #4a5568;
+    
+    /* Borders & Shadows */
+    --md-border: rgba(255, 255, 255, 0.08);
+    --md-border-light: rgba(255, 255, 255, 0.04);
+    --md-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --md-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --md-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+    --md-shadow-glow: 0 0 20px rgba(45, 99, 255, 0.3);
+    
+    /* Spacing */
+    --md-space-xs: 0.25rem;
+    --md-space-sm: 0.5rem;
+    --md-space-md: 1rem;
+    --md-space-lg: 1.5rem;
+    --md-space-xl: 2rem;
+    --md-space-2xl: 3rem;
+    
+    /* Typography */
+    --md-font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --md-font-mono: 'Fira Code', 'SF Mono', monospace;
+    --md-line-height: 1.7;
+    --md-line-height-heading: 1.3;
+    
+    /* Animations */
+    --md-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --md-transition-fast: all 0.15s ease-out;
+}
+
+/* ================================ */
+/* BASE STYLES                      */
+/* ================================ */
+
+.chat-container {
+    font-family: var(--md-font-family);
+    font-size: 16px;
+    line-height: var(--md-line-height);
+    color: var(--md-text-primary);
+    background: transparent;
+    word-wrap: break-word;
+    padding: var(--md-space-lg);
+}
+
+/* ================================ */
+/* TYPOGRAPHY                       */
+/* ================================ */
+
+/* Headings */
+.chat-container h1,
+.chat-container h2,
+.chat-container h3,
+.chat-container h4,
+.chat-container h5,
+.chat-container h6 {
+    margin-top: var(--md-space-xl);
+    margin-bottom: var(--md-space-md);
+    font-weight: 600;
+    line-height: var(--md-line-height-heading);
+    color: var(--md-text-primary);
+    position: relative;
+    transition: var(--md-transition-fast);
+}
+
+.chat-container h1 {
+    font-size: 2.5rem;
+    border-bottom: 2px solid var(--md-border);
+    padding-bottom: var(--md-space-sm);
+    background: linear-gradient(135deg, var(--md-text-primary) 0%, var(--md-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.chat-container h2 {
+    font-size: 2rem;
+    border-bottom: 1px solid var(--md-border-light);
+    padding-bottom: var(--md-space-xs);
+}
+
+.chat-container h3 {
+    font-size: 1.5rem;
+}
+
+.chat-container h4 {
+    font-size: 1.25rem;
+}
+
+.chat-container h5 {
+    font-size: 1.1rem;
+}
+
+.chat-container h6 {
+    font-size: 1rem;
+    color: var(--md-text-secondary);
+}
+
+/* Heading Hover Effects */
+.chat-container h1:hover::before,
+.chat-container h2:hover::before,
+.chat-container h3:hover::before {
+    content: '#';
+    position: absolute;
+    left: -1.5rem;
+    color: var(--md-primary);
+    opacity: 0.5;
+}
+
+/* Paragraphs */
+.chat-container p {
+    margin-bottom: var(--md-space-md);
+    color: var(--md-text-secondary);
+}
+
+/* Links */
+.chat-container a {
+    color: var(--md-primary);
+    text-decoration: none;
+    position: relative;
+    transition: var(--md-transition-fast);
+    border-bottom: 1px solid transparent;
+}
+
+.chat-container a:hover {
+    color: var(--md-primary-light);
+    border-bottom-color: var(--md-primary);
+    text-shadow: 0 0 8px rgba(45, 99, 255, 0.5);
+}
+
+/* Strong & Emphasis */
+.chat-container strong {
+    font-weight: 600;
+    color: var(--md-text-primary);
+}
+
+.chat-container em {
+    font-style: italic;
+    color: var(--md-text-secondary);
+}
+
+/* ================================ */
+/* LISTS                            */
+/* ================================ */
+
+.chat-container ul,
+.chat-container ol {
+    margin-bottom: var(--md-space-md);
+    padding-left: var(--md-space-xl);
+}
+
+.chat-container li {
+    margin-bottom: var(--md-space-xs);
+    color: var(--md-text-secondary);
+    position: relative;
+}
+
+.chat-container ul li::marker {
+    color: var(--md-primary);
+}
+
+.chat-container ol li::marker {
+    color: var(--md-primary);
+    font-weight: 600;
+}
+
+.chat-container li > ul,
+.chat-container li > ol {
+    margin-top: var(--md-space-xs);
+    margin-bottom: var(--md-space-xs);
+}
+
+/* Task Lists */
+.chat-container .task-list-item {
+    list-style: none;
+    padding-left: var(--md-space-lg);
+    position: relative;
+}
+
+.chat-container .task-list-item input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    top: 0.25rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 2px solid var(--md-primary);
+    border-radius: 4px;
+    background: var(--md-bg-elevated);
+    cursor: pointer;
+    transition: var(--md-transition-fast);
+}
+
+.chat-container .task-list-item input[type="checkbox"]:checked {
+    background: var(--md-primary);
+    border-color: var(--md-primary);
+}
+
+/* ================================ */
+/* CODE BLOCKS                      */
+/* ================================ */
+
+/* Inline Code */
+.chat-container code {
+    font-family: var(--md-font-mono);
+    font-size: 0.875em;
+    padding: 0.2em 0.4em;
+    margin: 0 0.1em;
+    background: var(--md-bg-elevated);
+    border: 1px solid var(--md-border);
+    border-radius: 6px;
+    color: var(--md-accent-info);
+    white-space: nowrap;
+}
+
+/* Code Blocks */
+.chat-container pre {
+    margin-bottom: var(--md-space-md);
+    padding: var(--md-space-md);
+    padding-top: 2.5rem; /* Etiket için üst boşluk */
+    background: linear-gradient(145deg, var(--md-bg-tertiary), var(--md-bg-secondary));
+    border: 1px solid var(--md-border);
+    border-radius: 12px;
+    overflow-x: auto;
+    position: relative;
+    box-shadow: var(--md-shadow-md);
+}
+
+.chat-container pre::before {
+    content: 'CODE';
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+    font-size: 0.7rem;
+    color: var(--md-text-muted);
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: var(--md-bg-tertiary);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid var(--md-border);
+}
+
+.chat-container pre code {
+    font-size: 0.9em;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    color: var(--md-text-primary);
+    white-space: pre;
+    line-height: 1.6;
+    display: block; /* Block display for proper formatting */
+}
+
+/* Syntax Highlighting (basic) - PRE üzerinde, CODE değil */
+.chat-container pre.language-javascript::before { content: 'JAVASCRIPT'; }
+.chat-container pre.language-python::before { content: 'PYTHON'; }
+.chat-container pre.language-html::before { content: 'HTML'; }
+.chat-container pre.language-css::before { content: 'CSS'; }
+.chat-container pre.language-java::before { content: 'JAVA'; }
+.chat-container pre.language-cpp::before { content: 'C++'; }
+.chat-container pre.language-csharp::before { content: 'C#'; }
+.chat-container pre.language-php::before { content: 'PHP'; }
+.chat-container pre.language-ruby::before { content: 'RUBY'; }
+.chat-container pre.language-go::before { content: 'GO'; }
+.chat-container pre.language-rust::before { content: 'RUST'; }
+.chat-container pre.language-typescript::before { content: 'TYPESCRIPT'; }
+.chat-container pre.language-bash::before { content: 'BASH'; }
+.chat-container pre.language-shell::before { content: 'SHELL'; }
+.chat-container pre.language-sql::before { content: 'SQL'; }
+.chat-container pre.language-json::before { content: 'JSON'; }
+.chat-container pre.language-yaml::before { content: 'YAML'; }
+.chat-container pre.language-markdown::before { content: 'MARKDOWN'; }
+
+/* ================================ */
+/* BLOCKQUOTES                      */
+/* ================================ */
+
+.chat-container blockquote {
+    margin: var(--md-space-lg) 0;
+    padding: var(--md-space-md) var(--md-space-lg);
+    background: linear-gradient(90deg, var(--md-primary-light) 0%, transparent 100%);
+    border-left: 4px solid var(--md-primary);
+    border-radius: 0 8px 8px 0;
+    position: relative;
+    font-style: italic;
+}
+
+.chat-container blockquote::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 3rem;
+    color: var(--md-primary);
+    opacity: 0.3;
+}
+
+.chat-container blockquote p {
+    margin-bottom: 0;
+    color: var(--md-text-primary);
+}
+
+/* ================================ */
+/* TABLES                           */
+/* ================================ */
+
+.chat-container table {
+    width: 100%;
+    margin-bottom: var(--md-space-md);
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--md-bg-elevated);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--md-shadow-md);
+}
+
+.chat-container th {
+    background: linear-gradient(135deg, var(--md-primary-dark), var(--md-primary));
+    color: var(--md-text-primary);
+    font-weight: 600;
+    padding: var(--md-space-sm) var(--md-space-md);
+    text-align: left;
+    border-bottom: 2px solid var(--md-primary);
+}
+
+.chat-container td {
+    padding: var(--md-space-sm) var(--md-space-md);
+    border-bottom: 1px solid var(--md-border);
+    color: var(--md-text-secondary);
+}
+
+.chat-container tr:hover {
+    background: var(--md-surface-hover);
+    transition: var(--md-transition-fast);
+}
+
+.chat-container tr:last-child td {
+    border-bottom: none;
+}
+
+/* ================================ */
+/* HORIZONTAL RULES                 */
+/* ================================ */
+
+.chat-container hr {
+    margin: var(--md-space-2xl) 0;
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--md-border) 20%, 
+        var(--md-primary) 50%, 
+        var(--md-border) 80%, 
+        transparent 100%);
+    position: relative;
+    overflow: visible;
+}
+
+.chat-container hr::after {
+    content: '◆';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--md-bg-primary);
+    color: var(--md-primary);
+    padding: 0 var(--md-space-sm);
+    font-size: 1rem;
+    line-height: 1;
+}
+
+/* ================================ */
+/* IMAGES & MEDIA                   */
+/* ================================ */
+
+.chat-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--md-shadow-lg);
+    transition: var(--md-transition);
+    margin: var(--md-space-md) 0;
+}
+
+.chat-container img:hover {
+    transform: scale(1.02);
+    box-shadow: var(--md-shadow-lg), var(--md-shadow-glow);
+}
+
+/* ================================ */
+/* SPECIAL ELEMENTS                 */
+/* ================================ */
+
+/* Badges */
+.chat-container .badge {
+    display: inline-block;
+    padding: var(--md-space-xs) var(--md-space-sm);
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 20px;
+    background: var(--md-primary);
+    color: var(--md-text-primary);
+    margin: 0 var(--md-space-xs);
+}
+
+/* Alerts */
+.chat-container .alert {
+    padding: var(--md-space-md);
+    margin-bottom: var(--md-space-md);
+    border-radius: 12px;
+    border-left: 4px solid;
+    background: var(--md-bg-elevated);
+}
+
+.chat-container .alert-info {
+    border-color: var(--md-accent-info);
+    background: linear-gradient(90deg, rgba(0, 180, 216, 0.1), transparent);
+}
+
+.chat-container .alert-success {
+    border-color: var(--md-accent-success);
+    background: linear-gradient(90deg, rgba(82, 183, 136, 0.1), transparent);
+}
+
+.chat-container .alert-warning {
+    border-color: var(--md-accent-warning);
+    background: linear-gradient(90deg, rgba(247, 127, 0, 0.1), transparent);
+}
+
+.chat-container .alert-danger {
+    border-color: var(--md-accent-danger);
+    background: linear-gradient(90deg, rgba(214, 40, 40, 0.1), transparent);
+}
+
+/* Keyboard Keys */
+.chat-container kbd {
+    display: inline-block;
+    padding: 0.2em 0.4em;
+    font-family: var(--md-font-mono);
+    font-size: 0.875em;
+    background: var(--md-surface);
+    border: 1px solid var(--md-border);
+    border-radius: 4px;
+    box-shadow: inset 0 -2px 0 var(--md-border);
+    color: var(--md-text-primary);
+}
+
+/* Details/Summary */
+.chat-container details {
+    margin-bottom: var(--md-space-md);
+    padding: var(--md-space-md);
+    background: var(--md-bg-elevated);
+    border: 1px solid var(--md-border);
+    border-radius: 12px;
+}
+
+.chat-container summary {
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--md-primary);
+    transition: var(--md-transition-fast);
+}
+
+.chat-container summary:hover {
+    color: var(--md-primary-light);
+}
+
+/* ================================ */
+/* ANIMATIONS                       */
+/* ================================ */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-container > * {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* ================================ */
+/* SCROLLBAR                        */
+/* ================================ */
+
+.chat-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.chat-container::-webkit-scrollbar-track {
+    background: var(--md-bg-secondary);
+    border-radius: 4px;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+    background: var(--md-primary);
+    border-radius: 4px;
+    transition: var(--md-transition-fast);
+}
+
+.chat-container::-webkit-scrollbar-thumb:hover {
+    background: var(--md-primary-light);
+}
+
+/* ================================ */
+/* RESPONSIVE                       */
+/* ================================ */
+
+@media (max-width: 768px) {
+    .chat-container {
+        padding: var(--md-space-md);
+    }
+    
+    .chat-container h1 { font-size: 2rem; }
+    .chat-container h2 { font-size: 1.5rem; }
+    .chat-container h3 { font-size: 1.25rem; }
+    
+    .chat-container pre {
+        padding: var(--md-space-sm);
+        font-size: 0.875rem;
+    }
+    
+    .chat-container table {
+        font-size: 0.875rem;
+    }
+}
+
+/* ================================ */
+/* UTILITY CLASSES                  */
+/* ================================ */
+
+.chat-container .text-center { text-align: center; }
+.chat-container .text-right { text-align: right; }
+.chat-container .text-muted { color: var(--md-text-muted); }
+.chat-container .text-primary { color: var(--md-primary); }
+.chat-container .text-success { color: var(--md-accent-success); }
+.chat-container .text-warning { color: var(--md-accent-warning); }
+.chat-container .text-danger { color: var(--md-accent-danger); }
+
+.chat-container .mt-1 { margin-top: var(--md-space-sm); }
+.chat-container .mt-2 { margin-top: var(--md-space-md); }
+.chat-container .mt-3 { margin-top: var(--md-space-lg); }
+.chat-container .mb-1 { margin-bottom: var(--md-space-sm); }
+.chat-container .mb-2 { margin-bottom: var(--md-space-md); }
+.chat-container .mb-3 { margin-bottom: var(--md-space-lg); }
+
+.chat-container .p-1 { padding: var(--md-space-sm); }
+.chat-container .p-2 { padding: var(--md-space-md); }
+.chat-container .p-3 { padding: var(--md-space-lg); }

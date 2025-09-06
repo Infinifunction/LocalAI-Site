@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(at 20% 20%, #1e1e2f, transparent 60%),
+              radial-gradient(at 80% 30%, #162447, transparent 60%),
+              radial-gradient(at 50% 80%, #0f2027, transparent 70%);
+  background-color: #0a0a0a; /* fallback */
+}
+
+.login-wrapper {
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+.animated-border{
+    margin: 0 auto;
+    padding: 30px;
+    width: 100%;
+    max-width: 420px;
+    background: #1c1f2b;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.animated-border::after, .animated-border::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+
+.animated-border::before{
+  filter: blur(1.5rem);
+  opacity: 1
+;
+}
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    position: relative;
+    border-bottom: 2px solid #ccc;
+    margin: 15px 0;
+}
+
+.input-field input {
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 1rem;
+    padding-left: 2px;
+}
+
+.input-field label {
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.input-field input:focus ~ label,
+.input-field input:valid ~ label {
+    transform: translateY(-120%);
+    font-size: 0.8rem;
+    top: 10px;
+}
+
+.password-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 0 15px 0;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.password-options label {
+    display: flex;
+    align-items: center;
+}
+
+.password-options input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: white;
+}
+
+.login-wrapper a {
+    color: #899df0;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.login-wrapper a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background: #fff;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px 140px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #191a20;
+    color: #fff;
+    border-color: #fff;
+}
+
+.account-options {
+    text-align: center;
+    margin-top: 30px;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.terms-wrapper {
+    margin: 10px 0 0 0;
+    color: #fff;
+    text-align: left;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.terms-wrapper label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.terms-wrapper input[type="checkbox"] {
+    margin-top: 4px;
+    accent-color: white;
+    width: 16px;
+    height: 16px;
+}
+
+.terms-wrapper a {
+    color: #899df0;
+    text-decoration: underline;
+}
+
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 300px;
+  background-color: #ff4c4c;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-weight: bold;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease, top 0.5s ease;
+}
+
+.toast.success {
+  background-color: #4caf50;
+}
+
+.toast.show {
+  opacity: 1;
+  top: 40px;
+  pointer-events: auto;
+}
+
+.toast.hidden {
+  opacity: 0;
+  top: 0px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 320px;
+}
+.modal-content input {
+  padding: 10px;
+  font-size: 1.1em;
+  width: 100%;
+}
+.modal-content button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
